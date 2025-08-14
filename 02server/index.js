@@ -1,6 +1,6 @@
 
 const express = require('express');
-const { default: home, service, course, contact, login, about } = require('./pages');
+const { default: home, service, course, contact, login, about } = require('./pages.js');
 const app = express();
 
 
@@ -16,7 +16,6 @@ app.get("/course", (request, response) => {
 app.get("/contact", (request, response) => {
     response.send(contact())
 })
-
 app.get("/login", (request, response) => {
     response.send(login())
 })
