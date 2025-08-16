@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+export default function form() {
+  return `<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,4 +14,5 @@
         <button>Login</button>
     </form>
 </body>
-</html>
+</html>`;
+}
