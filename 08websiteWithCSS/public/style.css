@@ -1,5 +1,112 @@
+/* Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
+body {
+    background-color: #f4f6f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 40px;
+}
+
+header h1 {
+    font-size: 1.5em;
+    letter-spacing: 2px;
+}
+
+header div:last-child{
+    display: flex;
+    gap: 25px;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.05em;
+    font-weight: bold;
+    transition: 0.3s;
+    padding: 6px 10px;
+}
+
+header a:hover {
+    background-color: #06a3b8;
+    color: #fff;
+}
+
+h1 {
+    text-align: center;
+    color: #00ccff;
+    margin: 25px 0;
+}
+
+h2 {
+    text-align: center;
+    color: #666;
+    margin-bottom: 20px ;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 25px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0, 3px, 8px, rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+p {
+    font-size: 1.1em;
+    margin-bottom: 1em;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    width: 70%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #06a3b8;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+button:hover{
+    background: #06a3b8;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+    font-size: 1.3em;
+    margin-top: 20px;
+}
+
+
