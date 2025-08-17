@@ -1,0 +1,16 @@
+{
+  "name": "nodejs-expressjs-css-loading",
+  "version": "1.0.0",
+  "description": "In this project i want to render html with css file using express js.",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "\"Sujit Tomar\"",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
+  }
+}
