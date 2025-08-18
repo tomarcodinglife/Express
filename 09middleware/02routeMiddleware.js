@@ -1,8 +1,7 @@
 import express from 'express'
 
 const app = express()
-const PORT = 3530
-
+const PORT = 3532
 
 // 01 Middleware
 app.get('/', (request, response) => {
