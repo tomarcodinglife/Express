@@ -3,6 +3,12 @@ import express from 'express'
 const app = express()
 const PORT = 3531
 
+function checkRouter(request, response, next) {
+    console.log(`User try to acess ${request.url} route`)
+    next()
+}
+
+app.use(checkRouter)
 
 // 01 Middleware
 app.get('/', (request, response) => {

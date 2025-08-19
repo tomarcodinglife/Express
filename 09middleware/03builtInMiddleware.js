@@ -1,7 +1,9 @@
 import express from 'express'
 
 const app = express()
-const PORT = 3533
+const PORT = process.env.PORT || 3533
+
+app.use(express.urlencoded({extended:false})) // builtin middleware
 
 // 01 Middleware
 app.get('/', (request, response) => {
@@ -34,7 +36,24 @@ app.get('/login', (request, response) => {
     <br> <a href=/about>About</a>
     <br> <a href=/contact>Contact</a>
     <br> <a href=/login>Login</a>
+    <form action="/submit" method="post">
+        <input type="text" placeholder="Enter Username" name='username'>
+        <br><br>
+        <input type="password" placeholder="Enter Password" name='password'>
+        <br><br>
+        <button>Submit</button>
+    </form>
     `)
+})
+
+app.post('/submit', (request, response) => {
+    const {username, password} = request.body  // request body data acess
+    response.send(`
+        <h1>Login Sucess</h1>
+        <p>Username: ${username}</p>
+        <p>Password: ${password}</p>
+        `)
+
 })
 
 app.listen(PORT, () => {
