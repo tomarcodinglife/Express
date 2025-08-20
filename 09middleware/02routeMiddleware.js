@@ -18,7 +18,7 @@ function userSufferURLMiddleware (request, response, next) {
 
 // app.use(checkAgeMiddleware)
 
-// 01 Middleware
+// 02 Middleware
 app.get('/', userSufferURLMiddleware, (request, response) => {
     response.send(`<h1>Home Page</h1>
     <br> <a href=/>Home</a>

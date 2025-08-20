@@ -3,7 +3,7 @@ import express from 'express'
 const app = express()
 const PORT = 3535
 
-// 01 Middleware
+// 05 Middleware
 app.get('/', (request, response) => {
     response.send(`<h1>Home Page</h1>
     <br> <a href=/>Home</a>
@@ -36,6 +36,20 @@ app.get('/login', (request, response) => {
     <br> <a href=/login>Login</a>
     `)
 })
+
+app.get('/error', (request, response, next) => {
+    const error = new Error('Something Went Wrong!')
+    error.status = 404
+    response.sendaa('Error Page')
+    next(error)
+
+})
+
+function errorHandel (error, request, response, next) {
+    response.status(error.status || 500).send('⚠️ try after sometime ....')
+}
+
+app.use(errorHandel)
 
 app.listen(PORT, () => {
     console.log(`Server Running on ${PORT}`)
