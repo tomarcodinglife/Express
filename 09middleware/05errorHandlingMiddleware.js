@@ -5,7 +5,8 @@ const PORT = 3535
 
 // 05 Middleware
 app.get('/', (request, response) => {
-    response.send(`<h1>Home Page</h1>
+    response.send(`
+    <h1>Home Page</h1>
     <br> <a href=/>Home</a>
     <br> <a href=/about>About</a>
     <br> <a href=/contact>Contact</a>
