@@ -1,0 +1,18 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: rgb(13, 45, 133);
+}
+
+p {
+    color: chocolate;
+}
+
+button {
+    background-color: aqua;
+    color: black;
+}
