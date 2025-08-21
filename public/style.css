@@ -1,0 +1,86 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Body styling */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header styling */
+#header-section {
+    background: linear-gradient(to right, #0077ff, #00d4ff);
+    padding: 1rem 2rem;
+    color: white;
+}
+
+#header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header-logo h1 {
+    font-size: 1.5rem;
+}
+
+#header-menu-list {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-lists {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-lists:hover {
+    color: yellow;
+}
+
+/* Main content styling */
+main {
+    flex: 1;
+    padding: 2rem;
+    text-align: center;
+}
+
+main h1 {
+    margin-bottom: 1rem;
+    color: #0077ff;
+}
+
+/* Footer styling */
+#footer-section {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+}
+
+#footer-section p {
+    margin: 0.2rem 0;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    #header-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+
+    #header-menu-list {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
