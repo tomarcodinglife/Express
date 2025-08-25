@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "\"Display Data after form submit\"",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,6 +18,9 @@
   },
   "homepage": "https://github.com/tomarcodinglife/Express#readme",
   "dependencies": {
-    "mode": "^0.3.2"
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "mode": "^0.3.2",
+    "nodemon": "^3.1.10"
   }
 }
