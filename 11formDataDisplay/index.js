@@ -18,7 +18,7 @@ app.get('/addUser', (request, response) => {
 })
 
 app.post('/submitUsers', (request, response) => {
-    response.render('submitUsers', request.body)
+    response.render('submitUsers', request.body) // 
 })
 
 app.listen(PORT, () => {
