@@ -20,15 +20,11 @@ app.post('/submitUsers', (request, response)=> {
 
 app.get('/users', (request, response) => {
     const users = ['sujit', 'amit', 'rahul', 'shivam']
-    response.render('users', {users:users})
+    const isLogin = false;
+    response.render('users', {users:users, isLogin})
 })
 
 
 app.listen(PORT, () => {
     console.log(`Server Running on ${PORT}`)
 })
-
-for (let index = 0; index < array.length; index++) {
-    const element = array[index];
-    
-}
