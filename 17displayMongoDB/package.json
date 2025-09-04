@@ -1,6 +1,7 @@
 {
   "name": "display_mongodb_database",
   "version": "1.0.0",
+  "type": "module",
   "description": "```terminal\r npm install express --save\r ```",
   "main": "index.js",
   "scripts": {
@@ -19,6 +20,7 @@
   "dependencies": {
     "ejs": "^3.1.10",
     "express": "^5.1.0",
+    "mongodb": "^6.19.0",
     "morgan": "^1.10.1",
     "nodemon": "^3.1.10"
   }

@@ -6,8 +6,6 @@ const PORT = 3948
 
 const dbName = "mydb"
 const mongoDBurl = "mongodb://localhost:27017"
-
-
 const client = new MongoClient(mongoDBurl)
 
 async function dbConnection(){
