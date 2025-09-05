@@ -8,16 +8,13 @@ const PORT = 3330
 const dbName = "mydb"
 const mongodbURL = "mongodb://localhost:27017"
 const client = new MongoClient(mongodbURL)
-let databaseUsers = null
 
 async function dbconnection () {
     await client.connect()
     console.log("✅ Connected to MongoDB")
     return client.db(dbName)
 }
-
 dbconnection()
-
 
 app.set('view engine', 'ejs')
 app.get('/', async (request, response) => {
