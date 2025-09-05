@@ -13,19 +13,23 @@ let databaseUsers = null
 async function dbconnection () {
     await client.connect()
     console.log("✅ Connected to MongoDB")
-
-    const db = client.db(dbName)
-    const collection = db.collection('users')
-    databaseUsers = await collection.find().toArray()
-    console.log(databaseUsers)
+    return client.db(dbName)
 }
 
 dbconnection()
 
 
+app.set('view engine', 'ejs')
+app.get('/', async (request, response) => {
+    const db = await dbconnection()
+    const users = await db.collection('users').find().toArray()
+    response.render('home', {users})
+})
 
-app.get('/', (request, response) => {
-    response.render('home')
+app.get('/api', async (request, response)=>{
+    const db = await dbconnection()
+    const users = await db.collection('users').find().toArray()
+    response.json(users)
 })
 
 app.listen(PORT, (request, response)=>{
