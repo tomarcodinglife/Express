@@ -29,7 +29,8 @@ app.get('/', async (request, response) => {
 app.get('/api', async (request, response)=>{
     const db = await dbconnection()
     const users = await db.collection('users').find().toArray()
-    response.json(users)
+    // response.json(users)
+    response.send(users)
 })
 
 app.listen(PORT, (request, response)=>{
