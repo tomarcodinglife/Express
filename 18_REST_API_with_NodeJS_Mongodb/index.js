@@ -14,7 +14,7 @@ async function dbconnection () {
     console.log("✅ Connected to MongoDB")
     return client.db(dbName)
 }
-dbconnection()
+// dbconnection()
 
 app.set('view engine', 'ejs')
 app.get('/', async (request, response) => {

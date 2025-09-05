@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Home Page</h1>
+    <div>
+        <table border="2">
+            <thead>
+                <tr>
+                    <td>Name</td>
+                    <td>Age</td>
+                    <td>City</td>
+                    <td>Email</td>
+                </tr>
+            </thead>
+            <tbody>
+                <% users.forEach(user => { %>
+
+                    <tr>
+                        <td> <%= user.name %> </td>
+                        <td> <%= user.age %> </td>
+                        <td> <%= user.city %> </td>
+                        <td> <%= user.email %> </td>
+                    </tr>
+
+               <% }) %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
