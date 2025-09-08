@@ -2,6 +2,7 @@
   "name": "post_method_rest_api_with_nodejs_mongodb",
   "version": "1.0.0",
   "description": "\"Post Method Rest API With NodeSJ & MongoDB\"",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
