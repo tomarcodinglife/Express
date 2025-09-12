@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Users List</h1>
+    <div>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>City</th>
+                    <th>Email</th>
+                    <th colspan="2">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% users.forEach(user =>{ %>
+                    <tr>
+                    <td><%= user.name %></td>
+                    <td><%= user.age %></td>
+                    <td><%= user.city %></td>
+                    <td><%= user.email %></td>
+                    <td><button onclick="fetch('/delete-user/<%= user._id %>', {method: 'DELETE'}).then(()=>{location.reload()})">Delete</button></td>
+                    <td><button><a href="/edit-user/<%= user._id %>">Edit</a></button></td>
+                    </tr>
+               <% }) %>
+            </tbody>
+        </table>
+    </div>
+    <br><br>
+    <div>
+        <button><a href="/form">Add User</a></button>
+    </div>
+</body>
+</html>
