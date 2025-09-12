@@ -31,7 +31,7 @@ client.connect().then((connsection)=>{
     app.get('/form', (request, response)=>{
         response.render('form')
     })
-    
+
     app.post('/add-user', async (request, response)=>{
 
         if(!request.body.name || !request.body.email || !request.body.age || !request.body.city){
@@ -46,10 +46,10 @@ client.connect().then((connsection)=>{
         console.log(request.body);
     })
 
-    app.delete('/delete-user/:id', (request, response)=>{
+    app.delete('/delete-user/:id', async (request, response)=>{
         const id = request.params.id;
         const collection = db.collection('users')
-        const result = collection.deleteOne({_id: new ObjectId(request.params.id)})
+        const result = await collection.deleteOne({_id: new ObjectId(request.params.id)})
         if(result){
             response.send({message: 'User Deleted', sucess: true})
         }else{
