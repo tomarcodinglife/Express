@@ -8,7 +8,7 @@
 <body>
     <h1>Data List from MongoDB Database</h1>
     <div>
-        <table>
+        <table border="1">
             <thead>
                 <tr>
                     <th>Namw</th>
@@ -25,7 +25,12 @@
                         <td><%= user.age %></td>
                         <td><%= user.city %></td>
                         <td><%= user.email %></td>
-                        <td><button>Delete</button></td>
+                        <td><button onclick="fetch('/delete-user/<%= user._id %>', {method: 'DELETE'}).
+                                            then(()=>{location.reload()})">
+                                            Delete
+                                        </button>
+                                    </td>
+                        "fetch('/delete-user/<%= user._id %>', {method: 'DELETE'}).then(()=>{location.reload()})"
                         <td><button>Edit</button></td>
                     </tr>
               <%  }) %>
