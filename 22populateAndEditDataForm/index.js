@@ -39,7 +39,7 @@ client.connect().then((connsection)=>{
         console.log(request.body);
     })
 
-    app.post('/edit-user/:id', async (request, response)=>{
+    app.post('/edit-data/:id', async (request, response)=>{
         const id = request.params.id;
         const collection = db.collection('users')
         const result = await collection.updateOne(
@@ -52,6 +52,24 @@ client.connect().then((connsection)=>{
             response.status(400).send({message: 'User Not Found', sucess: false})
         }
         console.log(id);
+    })
+
+    app.delete('/delete-user/:id', async (request, response)=>{
+        try {
+            const id = request.params.id;
+            const collection = db.collection('users')
+            const result = await collection.deleteOne({_id: new ObjectId(request.params.id)})
+            
+            if(result){
+                response.send({message: 'User Deleted', sucess: true})
+            }else{
+                response.status(400).send({message: 'User Not Found', sucess: false})
+            }
+        console.log(id);
+        } catch (error) {
+            console.error(error);
+            response.status(500).send({ message: 'Internal Server Error', success: false });
+        }
     })
     
 
