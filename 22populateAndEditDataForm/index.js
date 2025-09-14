@@ -12,8 +12,8 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
-client.connect().then((connsection)=>{
-    const db = connsection.db(dbName)
+client.connect().then((connection)=>{
+    const db = connection.db(dbName)
 
     app.get('/', async (request, response)=>{
         const collection = db.collection('users')
@@ -34,33 +34,57 @@ client.connect().then((connsection)=>{
             const collection = db.collection('users')
             const result = await collection.insertOne(request.body)
             console.log(result);
-            response.send('Data Saved')
+            response.redirect('/')
         }
         console.log(request.body);
     })
 
+    app.get('/edit-data/:id', async (request, response)=>{
+        try {
+
+            const id = request.params.id;
+            const collection = db.collection('users')
+            const user = await collection.findOne({_id: new ObjectId(id)})  
+            response.render('edit-data', {user})
+            console.log(id);
+            console.log(user);
+
+        } catch (error) {
+            console.log("error:- ", error);
+        }
+    })
+
     app.post('/edit-data/:id', async (request, response)=>{
-        const id = request.params.id;
-        const collection = db.collection('users')
-        const result = await collection.updateOne(
+        try {
+            const id = request.params.id;
+            const collection = db.collection('users')
+        
+            const result = await collection.updateOne(
             {_id: new ObjectId(id)},
             {$set: request.body}
-        )
-        if(result){
-            response.send({message: 'User Updated', sucess: true})
-        }else{
-            response.status(400).send({message: 'User Not Found', sucess: false})
+            );
+
+            if(result.matchedCount > 0){
+                // response.send({message: 'User Updated', sucess: true})
+                response.redirect('/')
+            }else{
+                response.status(400).send({message: 'User Not Found', sucess: false})
+            }
+
+        console.log("Updated Data", request.body); 
+        } catch (error) {
+            console.log("error:- ", error);
         }
-        console.log(id);
     })
 
     app.delete('/delete-user/:id', async (request, response)=>{
         try {
             const id = request.params.id;
             const collection = db.collection('users')
+
             const result = await collection.deleteOne({_id: new ObjectId(request.params.id)})
             
-            if(result){
+            if(result.deletedCount > 0){
                 response.send({message: 'User Deleted', sucess: true})
             }else{
                 response.status(400).send({message: 'User Not Found', sucess: false})

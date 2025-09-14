@@ -26,7 +26,7 @@
                     <td><%= user.city %></td>
                     <td><%= user.email %></td>
                     <td><button onclick="fetch('/delete-user/<%= user._id %>', {method: 'DELETE'}).then(()=>{location.reload()})">Delete</button></td>
-                    <td><button><a href="/edit-user/<%= user._id %>">Edit</a></button></td>
+                    <td><a href="/edit-data/<%= user._id %>"><button>Edit</button></a></td>
                     </tr>
                <% }) %>
             </tbody>
