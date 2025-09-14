@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 async function ConnectionDB () {
-    await mongoose.connect("mongodb://localhost:27017/users")
+    await mongoose.connect("mongodb://localhost:27017/mydb")
 
     const schema = mongoose.Schema({
         name: String,
