@@ -11,7 +11,8 @@
         <table border="1">
             <thead>
                 <tr>
-                    <th>Namw</th>
+                    <th>Si. No.</th>
+                    <th>Name</th>
                     <th>Age</th>
                     <th>City</th>
                     <th>Email</th>
@@ -19,13 +20,15 @@
                 </tr>
             </thead>
             <tbody>
-                <% users.forEach(user => { %>
+                <% users.forEach((user, index) => { %>
                     <tr>
+                        <td> <%= index + 1 %> </td>
                         <td><%= user.name %></td>
                         <td><%= user.age %></td>
                         <td><%= user.city %></td>
                         <td><%= user.email %></td>
-                        <td><button onclick="fetch('/delete-user/<%= user._id %>', {method: 'DELETE'}).then(()=>{location.reload()})">
+                        <td>
+                            <button onclick="fetch('/delete-user/<%= user._id %>', {method: 'DELETE'}).then(()=>{location.reload()})">
                                 Delete
                             </button>
                         </td>

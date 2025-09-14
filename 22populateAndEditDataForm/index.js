@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { request } from 'express';
 import { MongoClient, ObjectId } from 'mongodb';
 
 const app = express();
@@ -50,6 +50,30 @@ client.connect().then((connection)=>{
             console.log(user);
 
         } catch (error) {
+            console.log("error:- ", error);
+        }
+    })
+
+    app.put('/api/submit-data/:id', async (request, response) => {
+        try {
+            const id = request.params.id;
+            console.log(id)
+            const collection = db.collection('users')
+            
+            // update data in db
+            const result = await collection.updateOne(
+                {_id: new ObjectId(id)}, // filter
+                {$set: request.body} // update operation
+            );
+            
+            if(result.matchedCount > 0){
+                response.send({message: 'User Updated', sucess: true})
+            }else{
+                response.status(400).send({message: 'User Not Found', sucess: false})
+            }
+
+        } catch (error) {
+            response.status(500).send({ message: 'Internal Server Error', success: false });
             console.log("error:- ", error);
         }
     })
