@@ -5,7 +5,7 @@ async function ConnectionDB () {
 
     const schema = mongoose.Schema({
         name: String,
-        age: Number,    
+        age: Number,
         city: String,
         email : String
     })
