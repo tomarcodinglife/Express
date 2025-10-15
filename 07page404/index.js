@@ -6,7 +6,7 @@ let PORT = 3519
 app.get('/', (request, response) => {
     const abspath = path.resolve('views/home.html')
     response.sendFile(abspath)
-}) 
+})
 
 app.get('/about', (request, response) => {
     const abspath = path.resolve('views/about.html')
