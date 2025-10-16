@@ -20,7 +20,7 @@ description: Enter description (Node JS and Express JS Learn)
 entry point: (index.js)
 test command:
 git repository:
-keywords:
+keywords-
 author:  
 license: (ISC)   
 Is this OK? (yes)
