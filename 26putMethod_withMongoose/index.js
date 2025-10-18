@@ -8,4 +8,9 @@ app.get("/", (request, response)=>{
     response.send("Hello My Dear Friend")
 })
 
-//temp line
+app.post("/", (request, response)=>{
+    response.send({
+        message : "data Stored",
+        sucess : true
+    })
+})
