@@ -1,5 +1,4 @@
-import { response } from "express";
-import express from express
+import express from "express"
 
 const app = express();
 const port = 3526;
@@ -13,4 +12,10 @@ app.post("/", (request, response)=>{
         message : "data Stored",
         sucess : true
     })
+})
+
+
+
+app.listen(port, (request, response)=> {
+    console.log(`Server Running on ${port}`)
 })
