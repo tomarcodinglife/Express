@@ -23,7 +23,7 @@ git repository:
 keywords:
 author:  
 license: (ISC)   
-Is this OK? (yes)
+Is this OK? (yes).
 ```
 ### Step 03
 ```terminal
