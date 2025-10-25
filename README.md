@@ -21,7 +21,7 @@ entry point: (index.js)
 test command:
 git repository:
 keywords:
-author--:
+author:
 license: (ISC)   
 Is this OK? (yes).
 ```
